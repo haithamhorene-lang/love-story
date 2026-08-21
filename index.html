@@ -1,69 +1,272 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إلى شخص غيّر حياتي ❤️</title>
+
+    <title>إليكِ ❤️</title>
 
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            height: 100vh;
-            background: #080808;
+            min-height: 100vh;
+            overflow: hidden;
+
+            font-family: "Arial", sans-serif;
+
+            background:
+                radial-gradient(circle at 50% 40%, #32101f 0%, #12070d 35%, #050505 75%);
+
             color: white;
-            font-family: Arial, sans-serif;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             text-align: center;
         }
 
-        .container {
+        /* تأثير الإضاءة */
+
+        body::before {
+            content: "";
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: rgba(255, 60, 120, 0.12);
+
+            filter: blur(100px);
+
+            border-radius: 50%;
+
+            animation: glow 5s infinite alternate;
+        }
+
+        .screen {
+            position: relative;
+            z-index: 2;
+
+            width: 90%;
             max-width: 700px;
-            padding: 30px;
+
+            animation: appear 2s ease;
+        }
+
+        .small-text {
+            font-size: 15px;
+            letter-spacing: 4px;
+
+            color: #d9a6b7;
+
+            margin-bottom: 25px;
+
+            animation: fade 3s ease;
         }
 
         h1 {
-            font-size: 40px;
+            font-size: clamp(40px, 8vw, 75px);
+
+            margin: 0 0 25px;
+
+            font-weight: 700;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #ffb6cb,
+                #ffffff
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            animation: title 2s ease;
         }
 
-        p {
-            font-size: 22px;
-            line-height: 1.8;
+        .description {
+            font-size: 19px;
+
+            line-height: 2;
+
+            color: #ddd;
+
+            margin-bottom: 40px;
+
+            animation: fade 3s ease;
         }
 
         button {
-            padding: 15px 35px;
-            border: none;
-            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.25);
+
+            background: rgba(255,255,255,0.08);
+
+            color: white;
+
+            padding: 16px 45px;
+
+            border-radius: 50px;
+
             font-size: 18px;
+
             cursor: pointer;
+
+            backdrop-filter: blur(10px);
+
+            transition: 0.4s;
+
+            animation: buttonAppear 3s ease;
         }
+
+        button:hover {
+            background: rgba(255,80,130,0.25);
+
+            transform: scale(1.07);
+
+            box-shadow:
+                0 0 30px rgba(255,80,130,0.25);
+        }
+
+        .heart {
+            font-size: 30px;
+
+            margin-top: 30px;
+
+            opacity: 0.8;
+
+            animation: heartbeat 2s infinite;
+        }
+
+        /* Animations */
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes fade {
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+        @keyframes title {
+
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+        @keyframes buttonAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+        }
+
+        @keyframes glow {
+
+            from {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            to {
+                transform: scale(1.3);
+                opacity: 1;
+            }
+
+        }
+
     </style>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="screen">
 
-    <h1>إلى الشخص اللي غيّر حياتي ❤️</h1>
+        <div class="small-text">
+            إلى شخص غيّر الكثير...
+        </div>
 
-    <p>
-        في أشياء بحياتنا بتبدأ بالصدفة...
-        لكن بعض الصدف بتصير أجمل شيء صار معنا.
-    </p>
+        <h1>
+            إليكِ ❤️
+        </h1>
 
-    <button onclick="startStory()">
-        ابدئي ❤️
-    </button>
+        <div class="description">
+            في أشياء بحياتنا بتبدأ بالصدفة...
+            <br>
+            لكن بعض الصدف بتصير أجمل شيء صار معنا.
+        </div>
 
-</div>
+        <button onclick="startStory()">
+            ابدئي الحكاية
+        </button>
 
-<script>
-function startStory() {
-    alert("وهنا بدأت قصتي معك ❤️");
-}
-</script>
+        <div class="heart">
+            ♥
+        </div>
+
+    </div>
+
+    <script>
+
+        function startStory() {
+
+            alert("وهنا بدأت قصتي معك ❤️");
+
+        }
+
+    </script>
 
 </body>
+
 </html>
