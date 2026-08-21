@@ -257,15 +257,31 @@
 
     </div>
 
-    <script>
+<script>
 
-        function startStory() {
+    function startStory() {
 
-            alert("وهنا بدأت قصتي معك ❤️");
+        document.querySelector(".screen").innerHTML = `
+        
+            <div class="small-text">
+                ومن هون...
+            </div>
 
-        }
+            <h1>
+                بدأت الحكاية ❤️
+            </h1>
 
-    </script>
+            <div class="description">
+                ما كنت أعرف إن دخول شخص واحد إلى حياتي
+                <br>
+                ممكن يغيّر أشياء كثيرة بداخلي.
+            </div>
+
+        `;
+
+    }
+
+</script>
 
 </body>
 
